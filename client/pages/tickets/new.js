@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import Router from 'next/router';
-import useRequest from '../../hooks/use-request'; // Imported as useRequest
+import useRequest from '../../hooks/use-request';
 
 const NewTicket = () => {
   const [title, setTitle] = useState('');
   const [price, setPrice] = useState('');
   const { doRequest, errors } = useRequest({
-    // NGINX
     url: '/api/tickets',
     method: 'post',
     body: {

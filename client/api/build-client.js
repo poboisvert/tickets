@@ -1,19 +1,17 @@
 import axios from 'axios';
 
-const buildClient = ({ req }) => {
-  //Server Side
+export default ({ req }) => {
   if (typeof window === 'undefined') {
+    // We are on the server
+
     return axios.create({
-      // baseURL
       baseURL: 'http://www.bonnethood.com/',
       headers: req.headers,
     });
   } else {
-    // Browser side
+    // We must be on the browser
     return axios.create({
-      baseUrl: '/', // baseUrl
+      baseUrl: '/',
     });
   }
 };
-
-export default buildClient;

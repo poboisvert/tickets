@@ -3,7 +3,6 @@ import buildClient from '../api/build-client';
 import Header from '../components/header';
 
 const AppComponent = ({ Component, pageProps, currentUser }) => {
-  // Git
   return (
     <div>
       <Header currentUser={currentUser} />
@@ -13,12 +12,12 @@ const AppComponent = ({ Component, pageProps, currentUser }) => {
     </div>
   );
 };
-// NGINX
-AppComponent.getInitialProps = async (appContext) => {
-  //console.log(appContext);
 
+AppComponent.getInitialProps = async (appContext) => {
   const client = buildClient(appContext.ctx);
-  const { data } = await client.get('/api/users/currentuser');
+  const { data } = await client.get(
+    'http://www.bonnethood.com/api/users/currentuser'
+  );
 
   let pageProps = {};
   if (appContext.Component.getInitialProps) {
@@ -28,7 +27,6 @@ AppComponent.getInitialProps = async (appContext) => {
       data.currentUser
     );
   }
-  console.log(pageProps);
 
   return {
     pageProps,

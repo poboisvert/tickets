@@ -4,8 +4,6 @@ import { useState } from 'react';
 export default ({ url, method, body, onSuccess }) => {
   const [errors, setErrors] = useState(null);
 
-  // Generic axios - post, get, put , patch
-  //  const { doRequest, errors } = useRequest({
   const doRequest = async (props = {}) => {
     try {
       setErrors(null);
