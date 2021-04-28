@@ -4,7 +4,7 @@ import { app } from "./app";
 const PORT = 3000;
 
 const start = async () => {
-  console.log('Github starting!')
+  console.log('Github starting')
   
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY must be defined");
