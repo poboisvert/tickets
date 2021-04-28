@@ -1,5 +1,7 @@
 # Deployment with Digital Ocean
 
+URL http://www.bonnethood.com/
+
 #### Yaml files
 
 Please update the yaml file to hsot your domaine name
