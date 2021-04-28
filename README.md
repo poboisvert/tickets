@@ -1,12 +1,12 @@
-# Deployment on Digital Ocean
+# Deployment with Digital Ocean
 
-### Yaml files
+#### Yaml files
 
 Please update the yaml file to hsot your domaine name
 
-### Setup Digital Ocean - Ingress
+#### Setup Digital Ocean - Ingress
 
-## Github secret
+#### Github secret
 
 Create: (1) DIGITALOCEAN_ACCESS_TOKEN, (2) DOCKER_USERNAME, (3) DOCKER_PASSWORD
 
@@ -21,7 +21,7 @@ Create an API KEY
 Refer to Official Documentation (Updated April 28, 2021)
 > kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.45.0/deploy/static/provider/do/deploy.yaml
 
-### Create secrets
+#### Create secrets
 
 > kubectl create secret generic stripe-secret --from-literal STRIPE_KEY=WEBSITE_SECRET
 
@@ -29,6 +29,9 @@ Refer to Official Documentation (Updated April 28, 2021)
 
 > kubectl get secret  
 
+#### Use kubectl of Digital Ocean (cluster)
+
+> kubectl config use-context do-tor1-ticketing  (example)
 
 # Local Machine with GCP
 
