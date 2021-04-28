@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-mongo # Selector to find the pod
+  template:
+    metadata:
+      labels:
+        app: auth-mongo # To the pod
+    spec:
+      containers:
+        - name: auth-mongo
+          image: mongo # On Docker Hub - image
+---
+# Cluster IP Service to connect to the pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-mongo-srv
+spec:
+  selector:
+    app: auth-mongo # find the pod name
+  ports:
+    - name: db # name if only use for logging
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
