@@ -13,7 +13,6 @@ import { errorHandler, NotFoundError } from "@bonnethood/common";
 // Session Validation
 import cookieSession from "cookie-session";
 
-
 const app = express();
 
 // With cookieSession - secure
